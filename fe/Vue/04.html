@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>4. Vue的一些Api （slot） | H.Z的学习笔记</title>
+    <meta name="description" content="前端学习笔记">
+    
+    
+    <link rel="preload" href="/codeRececordPage/assets/css/0.styles.63fd0a59.css" as="style"><link rel="preload" href="/codeRececordPage/assets/js/app.30c9a231.js" as="script"><link rel="preload" href="/codeRececordPage/assets/js/14.2f28b8b0.js" as="script"><link rel="prefetch" href="/codeRececordPage/assets/js/10.cc6c42d7.js"><link rel="prefetch" href="/codeRececordPage/assets/js/11.d55b7942.js"><link rel="prefetch" href="/codeRececordPage/assets/js/12.16c6f011.js"><link rel="prefetch" href="/codeRececordPage/assets/js/13.7480c7e8.js"><link rel="prefetch" href="/codeRececordPage/assets/js/15.263c4281.js"><link rel="prefetch" href="/codeRececordPage/assets/js/16.4b39054d.js"><link rel="prefetch" href="/codeRececordPage/assets/js/17.9bafd663.js"><link rel="prefetch" href="/codeRececordPage/assets/js/18.496ef711.js"><link rel="prefetch" href="/codeRececordPage/assets/js/19.e833dd7d.js"><link rel="prefetch" href="/codeRececordPage/assets/js/2.7ec13179.js"><link rel="prefetch" href="/codeRececordPage/assets/js/20.2531ddbe.js"><link rel="prefetch" href="/codeRececordPage/assets/js/21.b8eb4334.js"><link rel="prefetch" href="/codeRececordPage/assets/js/3.7d25c66e.js"><link rel="prefetch" href="/codeRececordPage/assets/js/4.93c9a427.js"><link rel="prefetch" href="/codeRececordPage/assets/js/5.5548389b.js"><link rel="prefetch" href="/codeRececordPage/assets/js/6.91aca839.js"><link rel="prefetch" href="/codeRececordPage/assets/js/7.4dca8d9a.js"><link rel="prefetch" href="/codeRececordPage/assets/js/8.6dd72b18.js"><link rel="prefetch" href="/codeRececordPage/assets/js/9.2c671c22.js">
+    <link rel="stylesheet" href="/codeRececordPage/assets/css/0.styles.63fd0a59.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/codeRececordPage/" class="home-link router-link-active"><!----> <span class="site-name">H.Z的学习笔记</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/codeRececordPage/" class="nav-link">主页</a></div><div class="nav-item"><a href="/codeRececordPage/fe/home.html" class="nav-link">前端</a></div><div class="nav-item"><a href="/codeRececordPage/flutter/home.html" class="nav-link">Flutter</a></div><div class="nav-item"><a href="/codeRececordPage/node/home.html" class="nav-link">node</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="http://blog.closeeyes.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/hz199/__" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/codeRececordPage/" class="nav-link">主页</a></div><div class="nav-item"><a href="/codeRececordPage/fe/home.html" class="nav-link">前端</a></div><div class="nav-item"><a href="/codeRececordPage/flutter/home.html" class="nav-link">Flutter</a></div><div class="nav-item"><a href="/codeRececordPage/node/home.html" class="nav-link">node</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="http://blog.closeeyes.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/hz199/__" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/codeRececordPage/fe/home.html" class="sidebar-link">导读</a></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/codeRececordPage/fe/Vue/01.html" class="sidebar-link">1. vue组件之间的通信</a></li><li><a href="/codeRececordPage/fe/Vue/02.html" class="sidebar-link">2. Vue.extend编写组件</a></li><li><a href="/codeRececordPage/fe/Vue/03.html" class="sidebar-link">3. Vue的一些Api</a></li><li><a href="/codeRececordPage/fe/Vue/04.html" class="active sidebar-link">4. Vue的一些Api （slot）</a></li><li><a href="/codeRececordPage/fe/Vue/05.html" class="sidebar-link">5. Vue无状态组件 （functional）</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><div class="tip custom-block"><p class="custom-block-title">插槽</p> <p>v-slot 指令 Vue 2.6.0 起被引入 ，slot 和 slot-scope（Vue3.0不会出现）在这里就不介绍。</p></div> <ul><li><a href="https://github.com/hz199/__/blob/master/html/vue/vue%E6%8F%92%E6%A7%BD.html" target="_blank" rel="noopener noreferrer">完整代码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <p>还是结合代码看吧</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- 2.x 插槽使用 --&gt;</span>
+
+<span class="token comment">&lt;!-- 父组件使用 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>comp</span><span class="token punctuation">&gt;</span></span>
+  😄
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>slotName<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    🐛
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>comp</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- comp 组件 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 默认 slot --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 具名slot --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>slotName<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div><ul><li>具名插槽使用 <code>v-slot</code> 同时也可以使用缩写 <code>#</code> 来使用，具体请看下面栗子</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- CDN 引入的时候 组件名 和属性名 一定要用 - 连接 不能用驼峰 --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>children-comp</span> <span class="token attr-name">:test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>testObj<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 如果不使用 作用于插槽 知识使用具名插槽slot 只需要使用 v-slot:header 就可以了 不需要绑定参数--&gt;</span>
+    <span class="token comment">&lt;!-- 像这个栗子的  testObjProps 是从slot组件传递过来的props 可以在这里接收 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name"><span class="token namespace">v-slot:</span>header</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>testObjProps<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>{{testObj.headerData}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+      $header: {{testObjProps.$header}}
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>{{testObj[testObjProps.$header]}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- v-slot 也可以去除 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">v-slot</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{testObj.defaultData}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- v-slot:default2 的缩写 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">#default2</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>default2：{{testObj.defaultData}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 插槽解构 插槽也可以缩写 # 代替  v-slot:footer = &quot;{ $test }&quot; --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">#footer</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{ $test }<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{$test.footerData}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>children-comp</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'ChildrenComp'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    test<span class="token punctuation">:</span> Object
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;header&gt;
+        &lt;slot name=&quot;header&quot; $header=&quot;headerData&quot;&gt;&lt;/slot&gt;
+      &lt;/header&gt;
+      &lt;main&gt;
+        &lt;slot&gt;&lt;/slot&gt;
+        &lt;slot name=&quot;default2&quot;&gt;&lt;/slot&gt;
+      &lt;/main&gt;
+      &lt;footer&gt;
+        &lt;slot name=&quot;footer&quot; :$test=&quot;test&quot;&gt;&lt;/slot&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      testObj<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        headerData<span class="token punctuation">:</span> <span class="token string">'header'</span><span class="token punctuation">,</span>
+        defaultData<span class="token punctuation">:</span> <span class="token string">'default'</span><span class="token punctuation">,</span>
+        footerData<span class="token punctuation">:</span> <span class="token string">'footer'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/codeRececordPage/fe/Vue/03.html" class="prev">
+          3. Vue的一些Api
+        </a></span> <span class="next"><a href="/codeRececordPage/fe/Vue/05.html">
+          5. Vue无状态组件 （functional）
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/codeRececordPage/assets/js/app.30c9a231.js" defer></script><script src="/codeRececordPage/assets/js/14.2f28b8b0.js" defer></script>
+  </body>
+</html>
